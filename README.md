@@ -81,13 +81,13 @@ A comprehensive **PHP-based School Management System** designed to streamline ac
 > *(Save screenshots in the `/assets/` folder and link them here)*
 
 ### Admin Dashboard
-![Admin Dashboard](assets/admin-dashboard.png)
+![Admin Dashboard](assets/admin_dashboard_ss.png)
 
 ### Student Signup Page
-![Student Signup](assets/student-signup.png)
+![Student Signup](assets/login_ss.png)
 
 ### Teacher Grade Entry
-![Grade Entry](assets/teacher-grade.png)
+![Grade Entry](assets/assign_grades_ss.png)
 
 ---
 
