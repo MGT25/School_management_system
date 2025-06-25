@@ -32,6 +32,17 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         $stmt->bindParam(':student_id', $student_id);
         $stmt->execute();
         echo "updated successfully";
+    } elseif (isset($_POST['delete_id'])) {
+
+        $delete_id= $_POST['delete_id'];
+        $stmt= $conn->prepare("DELETE FROM `teachers` WHERE id=:delete_id");
+        $stmt->bindParam(":delete_id", $delete_id);
+        $result = $stmt->execute();
+        if ($result){
+            $showAlert=true;
+            $successMsg= "Record deleted successfully";
+        }
+
     }
 }
 
@@ -111,7 +122,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     <div class="container my-4">
         <div class="card mb-4 pb-2" id="students">
             <div class="card-header d-flex justify-content-between align-items-center">
-                <h5 class="card-title"><i class="fas fa-users me-2"></i> Enrolled Students</h5>
+                <h5 class="card-title"><i class="fas fa-users me-2"></i>Enrolled Students</h5>
 
                 <div class="buttons">
                     <a class="btn btn-sm" href="admin_dashboard.php" style="background-color: #1e3160; color: white;">
