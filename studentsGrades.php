@@ -63,8 +63,7 @@
                 $result= $selectstmt->setFetchMode(PDO::FETCH_ASSOC);
                 $exists= $selectstmt->fetchAll();
 
-                if (count($exists)){    
-                    print_r($exists);
+                if (count($exists)){
                     if ($exists[0]['grade'] !== $grade) {
                         $updatestmt = $conn->prepare("UPDATE `students_grades` SET `grade` = :grade WHERE student_id = :student_id AND course_name = :course_name");
                             $updatestmt->bindParam(":student_id", $student_id);
@@ -87,7 +86,6 @@
                         $insertstmt->bindParam(":course_name", $course_name);
                         $insertstmt->bindParam(":grade", $grade);
                         $insertstmt->execute();
-                        echo "inserted successfully";
                     }
                 }
 
