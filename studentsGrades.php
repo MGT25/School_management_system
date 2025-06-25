@@ -17,8 +17,8 @@
     if (!empty($coursee)) {
         $teacher_course = $coursee[0]['course_name'];   
     } else {
-        echo "⚠️ No course found for teacher.";
-        $teacher_course = ''; // Or handle the case gracefully
+        echo " No course found for teacher.";
+        $teacher_course = ''; 
     }
     if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
@@ -55,8 +55,6 @@
 
                 $edit_id = $_POST['edit_id'];
                 $grade = $_POST['grade'];
-                // $student_name = $_POST['student_name'];
-                // $course_name = $_POST['course_name'];
 
                 $selectstmt= $conn->prepare("SELECT * FROM `students_grades` WHERE student_id = :student_id AND course_name = :course_name");
                 $selectstmt->bindParam(":student_id", $student_id);
@@ -284,28 +282,28 @@
 
         switch (grade) {
             case "A+":
-                cell.style.backgroundColor = "#28a745"; // Emerald Green
+                cell.style.backgroundColor = "#28a745";
 
                 cell.style.color = "#fff";
                 break;
             case "A":
-                cell.style.backgroundColor = "#7ed957"; // Lime Green
+                cell.style.backgroundColor = "#7ed957";
                 cell.style.color = "#000";
                 break;
             case "B":
-                cell.style.backgroundColor = "#ffc107"; // Yellow
+                cell.style.backgroundColor = "#ffc107";
                 cell.style.color = "#000";
                 break;
             case "C":
-                cell.style.backgroundColor = "#fd7e14"; // Orange
+                cell.style.backgroundColor = "#fd7e14"; 
                 cell.style.color = "#000";
                 break;
             case "D":
-                cell.style.backgroundColor = "#dc3545"; // Red
+                cell.style.backgroundColor = "#dc3545";
                 cell.style.color = "#fff";
                 break;
             default:
-                cell.style.backgroundColor = "#f0f0f0"; // Gray fallback
+                cell.style.backgroundColor = "#f0f0f0";
                 cell.style.color = "#000";
          }
         })   
@@ -318,5 +316,3 @@
     </body>
 
     </html>
-
-    <!-- <img src="https://via.placeholder.com/30" class="rounded-circle me-2" alt="Student"> -->
